@@ -1,0 +1,84 @@
+############################# Input ############################################
+######################## Execbeat Configuration Example ########################
+
+#================================ Execbeat =====================================
+#execbeat:
+
+#  execs:
+    # Each - Commands to execute.
+    -
+      # Optional cron expression, defines when to execute the command.
+      # Default is every 1 minute.
+      #cron: "@every 5s"
+
+      # The command to execute by Execbeat
+      #command: date
+
+      #args:
+
+      # Type to be published in the 'type' field. For Elasticsearch output,
+      # the type defines the document type these entries should be stored
+      # in. Default: execbeat
+      #document_type: jolokia
+
+      #fields:
+        #host: test
+
+############################# Output ##########################################
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+output:
+
+  ### Elasticsearch as output
+  elasticsearch:
+    hosts: [ "localhost:9200" ]
+
+    #username: "admin"
+    #password: "s3cr3t"
+    #protocol: "https"  
+
+    #worker: 1
+    #index: "filebeat"
+    #path: "/elasticsearch"
+    #proxy_url: http://proxy:3128
+
+
+    #max_retries: 3
+    #bulk_max_size: 50
+    #timeout: 90
+    #flush_interval: 1
+
+    #ssl:
+      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      #certificate: "/etc/pki/client/cert.pem"
+      #key: "/etc/pki/client/cert.key"
+
+      # Controls whether the client verifies server certificates and host name.
+      # If insecure is set to true, all server host names and certificates will be accepted. 
+      # /!\ man-in-the-middle attacks /!\ Use only for testing.
+      #verification_mode: true
+
+      #cipher_suites: []
+      #curve_types: []
+      #supported_protocols: []
+
+############################# Logging #########################################
+
+# There are three options for the log ouput: syslog, file, stderr.
+# Under Windos systems, the log files are per default sent to the file output,
+# under all other system per default to syslog.
+#logging:
+
+  #to_syslog: false
+  #to_files: false
+  #files:
+    #path: /var/log/mybeat
+    #name: mybeat
+    #rotateeverybytes: 10485760 # = 10MB
+    #keepfiles: 7
+
+# beat, publish, service.To enable all selectors use ["*"]
+  #selectors: [ ]
+  # critical, error, warning, info, debug
+  #level: error
