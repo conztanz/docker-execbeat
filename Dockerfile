@@ -9,6 +9,7 @@ RUN chmod +x -R /run
 # config
 COPY config/execbeat.yml /.backup/execbeat/execbeat.yml
 RUN  rm -f /etc/execbeat/execbeat.yml
+RUN mkdir -p /usr/share/scripts
 
 # bin
 RUN sh /run/setup/execbeat.sh \

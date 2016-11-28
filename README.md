@@ -41,6 +41,7 @@ services:
             ELASTICSEARCH_PORT: 9200
         volumes:
             - /etc/execbeat:/etc/execbeat
+            - /usr/share/scripts:/usr/share/scripts
         network_mode: bridge
         restart: always
 
@@ -91,6 +92,7 @@ services:
             ELASTICSEARCH_PORT: 9200
         volumes:
             - /etc/execbeat:/etc/execbeat
+            - /usr/share/scripts:/usr/share/scripts
         network_mode: bridge
         restart: always
 
@@ -114,6 +116,10 @@ Elasticsearch port.
 Configuration file is located in `/etc/execbeat/execbeat.yml` if you follow the same volume mapping as in docker-compose examples above.
 
 You can find help with execbeat configuration [here](https://github.com/christiangalsterer/execbeat/blob/master/docs/configuration.asciidoc).
+
+# Share scripts from host
+
+You can share scripts from your host to the container by adding them to `/usr/share/scripts` if you follow the same volume mapping as in docker-compose exammples above.
 
 # User Feedback
 ## Issues
