@@ -1,0 +1,7 @@
+version: '2'
+services:
+    execbeat:
+        build: ..
+        network_mode: bridge
+        volumes:
+            - /etc/execbeat:/etc/execbeat
