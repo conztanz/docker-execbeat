@@ -119,7 +119,7 @@ You can find help with execbeat configuration [here](https://github.com/christia
 
 # Share scripts from host
 
-You can share scripts from your host to the container by adding them to `/usr/share/execbeat/scripts` if you follow the same volume mapping as in docker-compose exammples above.
+You can share scripts from host to the container by adding them to `/usr/share/execbeat/scripts` if you follow the same volume mapping as in docker-compose exammples above.
 
 # User Feedback
 ## Issues
